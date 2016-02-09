@@ -3,7 +3,7 @@ FROM debian
 
 WORKDIR /tmp
 
-EXPOSE 9222
+EXPOSE 9223
 
 RUN useradd -m chrome
 
