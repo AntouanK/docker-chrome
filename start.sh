@@ -4,6 +4,7 @@ Xvfb :1 -screen 0 1280x720x16 &
 
 sleep 1;
 
+# For more switches : http://peter.sh/experiments/chromium-command-line-switches/
 echo "\n[start script] Starting Google Chrome at $@";
 google-chrome \
 --no-sandbox \
