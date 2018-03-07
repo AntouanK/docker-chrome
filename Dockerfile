@@ -27,11 +27,14 @@ RUN rm -rf /tmp/*
 RUN apt-get purge
 RUN apt-get clean
 RUN apt-get autoremove -y
-
 ENV DISPLAY :1.0
+
+
+COPY remote-profile /home/chrome/remote-profile
+RUN chown chrome /home/chrome/remote-profile
+COPY start.sh /home/chrome/
 
 USER chrome
 WORKDIR /home/chrome
-COPY start.sh /home/chrome/
 
 ENTRYPOINT ["sh", "/home/chrome/start.sh"]
