@@ -30,8 +30,8 @@ RUN apt-get autoremove -y
 ENV DISPLAY :1.0
 
 
-COPY remote-profile /home/chrome/remote-profile
-RUN chown chrome /home/chrome/remote-profile
+COPY remote-user-data-dir /home/chrome/remote-user-data-dir
+RUN chown chrome /home/chrome/remote-user-data-dir
 COPY start.sh /home/chrome/
 
 USER chrome
