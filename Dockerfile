@@ -27,11 +27,16 @@ RUN rm -rf /tmp/*
 RUN apt-get purge
 RUN apt-get clean
 RUN apt-get autoremove -y
-
 ENV DISPLAY :1.0
+
+COPY remote-user-data-dir /home/chrome/remote-user-data-dir
+RUN chown -R chrome /home/chrome/remote-user-data-dir
+RUN chmod --recursive +rw /home/chrome/remote-user-data-dir/Default/Cache
+RUN chmod 770 /home/chrome/remote-user-data-dir/Default/Cache
+
+COPY start.sh /home/chrome/
 
 USER chrome
 WORKDIR /home/chrome
-COPY start.sh /home/chrome/
 
 ENTRYPOINT ["sh", "/home/chrome/start.sh"]
