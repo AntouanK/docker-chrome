@@ -18,6 +18,7 @@ RUN apt-get install -y libasound2 libatk1.0-0 libcairo2 libcups2 libfontconfig1 
 RUN apt-get install -y libpango1.0-0 libxss1 libxtst6 libappindicator1 libcurl3 xdg-utils
 RUN apt-get install -y fonts-liberation
 RUN apt-get install -y libgtk-3-0 lsb-release
+RUN apt-get install -y libappindicator3-1
 
 # use socat to redirect the 9222 port
 RUN apt-get install -y socat
